@@ -1,4 +1,5 @@
 '''
+Question 1:
 You are given subject-wise marks of the student which are stored in a tuple. Your task is to determine whether the student has "Passed" or "Failed".
 Note:
 • If the student has scored strictly below 35 in atleast three subjects, the student has failed otherwise confirm him/her as passed.
@@ -30,3 +31,56 @@ if (c >= 3):
     print("input: Failed")
 else:
     print("output: Passed")
+
+
+
+
+
+
+
+
+
+
+
+'''
+Question 2:
+A tuple of strings is provided to you, where each element is comma separated. Your task is to arrange the strings in alphabetical order (lexicographicany in ascending order).
+Note:
+• Upper case letters has the highest priority (Example : 'A'>'a').
+• Refer to the Displayed test cases for a better understanding.
+Constraints:
+1 <= length of the stmg 10
+Strings shouki only the lowercase and uppercase letters.
+Sample Test case:
+apple,cat,boy,Apple,Cat,Boy
+[Apple', 'Boy', 'Cat, 'apple', boy', 'cat']
+
+'''
+l = list(i for i in input("input: ").split(","))
+l.sort()
+print(l)
+
+
+
+
+
+
+
+
+
+
+
+'''
+Question 3:
+Take a string from the user. Your task is to convert the string into the tuple of tuples where each element should contain the position of the character as the first element and the
+corresponding character as the second element. Position always starts from 1.
+Note:
+• Refer to the Displayed test cases for a better understanding.
+
+String is case sensitive, and can contain numeric, alphabets, and special characters.
+
+'''
+i = input("input: ")
+print(tuple(enumerate(i,1)))
+
+

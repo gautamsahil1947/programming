@@ -50,7 +50,7 @@ elif ( i == 2):
 elif ( i == 3):
     function.exponent()
 elif ( i == 4):
-    funcion.remainder()
+    function.remainder()
 elif ( i == 5):
     function.factorial()
 elif ( i == 6):
@@ -64,13 +64,13 @@ elif ( i == 9):
 elif ( i == 10):
     function.tangent()
 elif ( i == 11):
-    funciton.cotangent()
+    function.cotangent()
 elif ( i == 12):
     function.cosecant()
 elif ( i == 13):
     function.secant()
 elif ( i == 14):
-    funcion.sine_inverse()
+    function.sine_inverse()
 elif ( i == 15):
     function.cosine_inverse()
 elif ( i == 16):
@@ -80,7 +80,7 @@ elif ( i == 17):
 elif ( i == 18):
     function.secant_inverse()
 elif ( i == 19):
-    funciton.cosecant_inverse()
+    function.cosecant_inverse()
 elif ( i == 20):
     function.detorad()
 elif (i == 21):

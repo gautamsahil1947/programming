@@ -119,3 +119,79 @@ def exponent():
             exp = exp ** float(i)
 
 
+def remainder():
+    b = ''' a = first input
+            b = second input
+            result = a % b'''
+    c = float(input("a: "))
+    d = float(input("b: "))
+    print("result :" , c % d)
+
+
+
+
+
+def factorial():
+    def fac(n):
+        if (n == 1):
+            return 1
+        else:
+            return n * fac(n - 1)
+    
+    while (True):
+        k = int(input("enter the natural number: "))
+        if (k > 0 and k % 1 == 0):
+            break
+        else:
+            continue
+    print(fac(k))
+
+
+
+
+def determinant_2x2():
+    b = '''    a11   a12 
+    a21   a22 '''
+    print(b)
+    a11 = float(input("a11: "))
+    a12 = float(input("a12: "))
+    a21 = float(input("a21: "))
+    a22 = float(input("a22: "))
+
+    g = (a11 * a22) - (a21 * a12)
+    print("vlaue of determinant is:" , g)
+
+
+def determinant_3x3():
+    b = "a1   a2   a3"
+    c = "b1   b2   b3"
+    d = "c1   c2   c3"
+    print(b)
+    print(c)
+    print(d)
+    a1 = float(input("a1: "))
+    a2 = float(input("a2: "))
+    a3 = float(input("a3: "))
+    b1 = float(input("b1: "))
+    b2 = float(input("b2: "))
+    b3 = float(input("b3: "))
+    c1 = float(input("c1: "))
+    c2 = float(input("c2: "))
+    c3 = float(input("c3: "))
+    g = a1 * (b2*c3 - b3*c2) - a2 * (b1*c3 - b3*c1) + a3 * (b1*c2 - b2*c1)
+    print("value of determinant is:" , g)
+
+
+import math
+def sine():
+    i = float(input("angle in radians: "))
+    print(math.sin(i))
+
+def cosine():
+    i = float(input("angle in radians: "))
+    print(math.cos(i))
+
+def tangent():
+    i = float(input("angle in radians: "))
+    print(math.tan(i))
+

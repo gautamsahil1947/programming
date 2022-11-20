@@ -32,6 +32,8 @@ a = '''choose the operation.
         19. cosecant inverse
         20. degree to radian
         21. radian to degree
+        22. lcm
+        23. hcf
 
         '''
 import function
@@ -81,7 +83,11 @@ elif ( i == 19):
     funciton.cosecant_inverse()
 elif ( i == 20):
     function.detorad()
-else:
+elif (i == 21):
     function.radtode()
+elif (i == 22):
+    function.lcm()
+elif (i == 23):
+    function.hcf()
 ''' so this is a note for future reference that only the if and the elif conditionals take the conditions and the else block doesn't 
     take care of this in future.'''

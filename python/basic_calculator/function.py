@@ -23,7 +23,7 @@
     input: sahil
     invalid input.
 
-    '''
+'''
 def sumation():
     b = '''initially sum = 0
            at the prompt input: , enter the value and that value will be added to sum
@@ -195,3 +195,4 @@ def tangent():
     i = float(input("angle in radians: "))
     print(math.tan(i))
 
+ 

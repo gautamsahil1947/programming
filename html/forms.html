@@ -7,10 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="formvalidation.html">
-        <table border="1px">
-            
-        </table>
-    </form>
+    <!-- and to create a form you just need to add a form tag outside the table tag. -->
+    <table>
+        <tr>
+            <!-- the tag outside creates a table row and the td inside that is down in the code  -->
+            <td align="rignt">Name</td>
+            <td>
+                <input type="text" name="your name" >
+            </td>
+        </tr>
+        <tr>
+            <!-- the code written below is the code for adding a dropdown and the options for a table row -->
+            <select name="Country" id="t4">
+                <option value="-1">[choose yours]</option>
+                <option value="1">USA</option>
+                <option value="2">UK</option>
+                <option value="3">India</option>
+            </select>
+        </tr>
+        <tr>
+            <input type="checkbox" name="gender" value="male" checked>Male<br>
+            <input type="checkbox" name="gender" value="female">Female <br>
+            <input type="checkbox" name="gender" value="other">Other <br>
+        </tr>
+    </table>
+     <!-- the other is to code the passward text box and confirm text box also try to add a submit button to the page. -->
 </body>
 </html>
+<!--also know how to add a dropdown to a form in html.
+    and there is a difference between the radio buttons and the checkbox in html and try the code for these.
+
+      -->

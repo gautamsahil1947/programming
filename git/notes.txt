@@ -1,14 +1,5 @@
 commands for git
-some things do not require hard work and working hard there is foolishness
-so, the goal should be to get as much output as possible in as little time as possible.
-and in this the quality or the learnings should not be compromised. instead effeciency should be the target.
-also do not hesitate from googling the stuff like 'what is' or 'how to'. 
-also note that the procastination is the biggest enemy of progress and do not make excuses for procastination.
-please do not procastinate and sleep or get distracted from what you are supposed to do according to your planner/diary/journal.
-and the difference between what you do and what you are supposed to do is the difference between the rulers and the slaves
-also read n books a week.
-
-01. git clone 
+a1. git clone 
 	this command is used to clone a repository from github cloud storage to the local computers.
 	the command syntax is $git clone link to the repository
 	and the repository will be cloned to the pwd.
@@ -47,6 +38,59 @@ also read n books a week.
 		and do not forget to add a message to the commit
 	then you run git push to push the changes to the cloud
 	and that is it.
+07. git checkout
+	this command is used to undo the changes made basically undo all the uncommitted changes.
+	for this you need to play with this command and learn about it.
+	the syntax is
+		$ git checkout -- hello.py
+		$ git checkout -- . this is for all the staged and uncommitted changes.
+	revision
+	make a file or make some changes
+	$ git add file name or $ git add -A
+	$ git commit -m 'the message'
+	$ git log for checking the commit and also the commit id of the commits.
+	$ git push
+	this is the sequence in most of the cases.
+08. git revert
+	git revert is the command used for reverting the changes which were committed 
+	so for reverting the commited changes use git log to find the commit id
+	then run the git revert command like this 
+		$ git revert commit-id
+	and the vim editor will show on for showing the reverting action summary 
+	exit the vim ui
+	and the changes will be reverted for that commit.
+	the revert command changes and commits at the same time 
+	for explicitly commiting the change later you do the following thing
+		$ git revert -n id of the commit
+		and then the change will be reverted and the modified file will 
+		come to the staging area.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

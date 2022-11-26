@@ -1,0 +1,52 @@
+commands for git
+some things do not require hard work and working hard there is foolishness
+so, the goal should be to get as much output as possible in as little time as possible.
+and in this the quality or the learnings should not be compromised. instead effeciency should be the target.
+also do not hesitate from googling the stuff like 'what is' or 'how to'. 
+also note that the procastination is the biggest enemy of progress and do not make excuses for procastination.
+please do not procastinate and sleep or get distracted from what you are supposed to do according to your planner/diary/journal.
+and the difference between what you do and what you are supposed to do is the difference between the rulers and the slaves
+also read n books a week.
+
+01. git clone 
+	this command is used to clone a repository from github cloud storage to the local computers.
+	the command syntax is $git clone link to the repository
+	and the repository will be cloned to the pwd.
+02. git status
+	if you made any changes to your file then git needs to know about it 
+	if it doesn't know then those changes are called untracked changes 
+	and a staging area in git is where you keep the final files before changing those things to the local repository 
+	it is helpful in many ways like organising the commits, final reviewing etc.
+	
+	so git status gives a picture of what is going on in the repository or what changes will you be making to it on commiting.
+03. git add 
+	this command is used to add the changed files to the staging area.
+	the syntax is $git add name of the file
+	and the file will be added to the staging area
+	using the command 'git status' you can see the changes yourself.
+04. git commit
+	this command is used to commit the changes to the local repository 
+	'git commit' takes -m for the message for the commit
+	the syntax is 'git commit -m "type the message here"'
+	and all the files in the staging area are committed to the local repository
+
+05. git log
+	git log will show you your commit history.
+06. git push 
+	git push is used to push the changes in the local repository to the github repository.
+07. git difftool HEAD 'we will talk about this head later.'
+	if you modify a file then this command will help you to see the difference between the previous and the modified version
+
+
+	so you made a change to a file 
+	you run git status
+		it shows that the file is modified
+	you run git add to add the file to the staging area
+		the file is added to the staging area, you can run git status to verify
+	you run git commit to commit the files in the staging area to the local repository
+		and do not forget to add a message to the commit
+	then you run git push to push the changes to the cloud
+	and that is it.
+
+
+

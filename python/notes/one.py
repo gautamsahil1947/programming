@@ -1,46 +1,7 @@
-# this is the first part of the notes.
-''' these notes are based on smartwork and not on plain hard work that is 
-    it is tried to get as much output as possible in as less time as 
-    possible without compromising the quality of learning. '''
-
-# python is an interpreted high level language for general purpose programming.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# this is a comment in python
+print('print function is used to print something.')
+print('hello ' * 3 ) # this prints the string one after other in the same line
+print("how" "are" "you") # prints howareyou
 
 
 

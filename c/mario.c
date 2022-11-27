@@ -3,7 +3,7 @@ int main (void)
 {
 	// we want to  take a number input and print it.
 	int n;
-	printf("enter the number: ");
+	printf("enter the number: \n");
 	scanf("%i", &n);
 	printf("the number is: %i\n", n);
 

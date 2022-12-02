@@ -21,19 +21,8 @@ a = '''choose the operation.
         8. sine  
         9. cosine 
         10. tangent  
-        11. cotangent  
-        12. cosecant  
-        13. secant  
-        14. sine inverse
-        15. cosine inverse
-        16. tangent inverse
-        17. cotangent inverse
-        18. secant inverse
-        19. cosecant inverse
-        20. degree to radian
-        21. radian to degree
-        22. lcm
-        23. hcf
+        11. degree to radian
+        12. radian to degree
 
         '''
 import function
@@ -64,30 +53,9 @@ elif ( i == 9):
 elif ( i == 10):
     function.tangent()
 elif ( i == 11):
-    function.cotangent()
-elif ( i == 12):
-    function.cosecant()
-elif ( i == 13):
-    function.secant()
-elif ( i == 14):
-    function.sine_inverse()
-elif ( i == 15):
-    function.cosine_inverse()
-elif ( i == 16):
-    function.tangent_inverse()
-elif ( i == 17):
-    function.cotangent_inverse()
-elif ( i == 18):
-    function.secant_inverse()
-elif ( i == 19):
-    function.cosecant_inverse()
-elif ( i == 20):
     function.detorad()
-elif (i == 21):
+elif (i == 12):
     function.radtode()
-elif (i == 22):
-    function.lcm()
-elif (i == 23):
-    function.hcf()
 ''' so this is a note for future reference that only the if and the elif conditionals take the conditions and the else block doesn't 
     take care of this in future.'''
+    # so do not enter any condition in the else.

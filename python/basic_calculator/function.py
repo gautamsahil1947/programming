@@ -194,5 +194,10 @@ def cosine():
 def tangent():
     i = float(input("angle in radians: "))
     print(math.tan(i))
+def detorad():
+    i = float(input("enter angle in degrees: "))
+    print(math.radians(i))
+def radtode():
+    i = float(input("enter andle in radians: "))
+    print(math.degrees(i))
 
- 

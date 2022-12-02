@@ -3,10 +3,10 @@
         print tables from 2 till taht number'''
 class tables:
     # creating a method
-    def gettables(self, i):
-        self.i = i
+    def gettables(hello, i):
+        hello.i = i
         # loops for the tables.
-        for j in range(2, self.i + 1):
+        for j in range(2, hello.i + 1):
             for k in range(1, 11):
                 print(j, "x", k, "=", (j*k))
             print("\r")

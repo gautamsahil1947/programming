@@ -1,4 +1,0 @@
-this is a sample file
-and this is the second line
-thiis is the third line.
-this is the appended text

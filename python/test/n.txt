@@ -1,2 +1,0 @@
-this is the second test file
-this is the first text file

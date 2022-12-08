@@ -8,4 +8,4 @@ int main (void)
 	printf("the number is %d\n", n);
 	return 0;
 }
-
+// question: what is the difference between %i and %d in c ?

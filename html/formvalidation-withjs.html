@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script</title>
+
+    <script>
+        // java script 01
+        function formvalid()
+        {
+            // if the element with the id b1 is equal to empty string
+            if (document.getElementById("b1") == "")
+            {
+                // alert the user to enter the name
+                alert("Enter the name!");
+                // focus the cursor to the textbox
+                document.getElementById("bq").focus();
+                // return false for not getting the value
+                return false;
+            }
+            // if the second textbox is empty
+            if (document.getElementById("b2") == "")
+            {
+                // alert the user for the input 
+                alert("enter the email id!");
+                // focus the cursor to the textbox
+                document.getElementById("b2").focus();
+                // return false 
+                return false;
+
+            }
+            // if the text box is empty
+            if (document.getElementById("b3") == "")
+            {
+                // alert the user to enter the pin code
+                alert("enter the zip code");
+                // focus the cursor to the textbox
+                document.getElementById("b3").focus();
+                // and return false
+                return false;
+
+            }
+            // if the option 
+            if (document.getElementById("b4") == "-1")
+            {
+                // alert the user for selecting the option other than the default -1
+                alert("select an option!");
+                //focus the cursor on the textbox
+                document.getElementById("b4").focus();
+                //return false
+                return false;
+
+            }
+            // if nothing is returned till now then return true
+            return (true);
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <form name="myform" onsubmit="return(formvalid());">
+    <table border="">
+        <tr>
+            <th>Name</th>
+            <td><input type="text" name="tb1" id="b1"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="tb2" id="b2"></td>
+        </tr>
+        <tr>
+            <th>Zip Code </th>
+            <td><input type="text" name="tb3" id="b3"></td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td>
+            <select name="country" id="b4">
+                <option value="-1" selected>[choose yours]</option>
+                <option value="1">USA</option>
+                <option value="2">UK</option>
+                <option value="3">INDIA</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" name="submit" id="b5"></td>
+        </tr>
+
+    </table>
+</form>
+
+
+</body>
+</html>

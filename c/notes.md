@@ -121,7 +121,7 @@
     -   …
 -   And David’s first program just printed “hello, world” to the screen:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -226,3 +226,99 @@ int main(void)
     printf("hello, answer\n");
 }
 ```
+- this prints `hello, answer` on the terminal. so for printing hello, sahil in my case, i have to use something called place holders to tell the compiler to insert the value of a certain variable at certain place.
+```c
+...
+printf("hello, %s\n", answer);
+...
+```
+- `%s` is a place holder (FORMAT CODE) which is used to place a string at its place. 
+- we also need to provide the variable which holdes the string after the `""` , _answer_ in this case
+- some functions come with the language and for those which do not come with it, we have to use libraries. so the `#include <stdio.h>` is inclucing the functionalities of the standard input and output library, for example `printf`, `scanf` etc.
+
+- similarly to use the function `get_string`, we have to use the cs50 library.
+
+- `%s` means 'hi computer, replace this %s with a string eventually'. and the f in printf means formatted, therefore printf does all that formatting or placing the strings in place of %s
+
+- another approach to this question 
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    // this thing also wroks
+    printf("hello, %s\n", get_string("what is your name? "));
+}
+```
+- but this is worth it if you want to use the name only once. Reusability is being compromised.
+
+```c
+int main(void)
+{
+    // this is the core of your programm
+}
+```
+- executing a code in C, fires up the main function.
+this function has it all.
+
+```c
+#include <stdio.h>
+#include <cs50.h>
+```
+- `stdio.h` is a header file for the standard input output library and contains a menu of functions like `printf` , `scanf` etc. and it prepares the compiler on how these functions are implemented.
+
+- the functions are in the `stdio.c`,  `cs50.c` files and provide all the functionality and the `#include` is the specific mechanism to use it, via header files.
+
+### Some Linux Commands
+- `pwd` &rarr; is used to print the directory in which you are right now. it stands for _present working directory._
+- `ls` &rarr; is used to list the contents of a directory. 
+  - `ls -a` &rarr; is used to list all the contenst of a directory including the _hidden files_
+- `cd` &rarr;  is used to change directories. 
+  - `cd ..` &rarr; is used to get out of the `pwd` into the parent directory.
+  - `cd ../..` &rarr; is used to go to the grand parent directory, which is parent 
+  directory of the parent directory.
+  - `cd abcd` &rarr; is used to go into a directory inside the pwd, named *abcd*.
+- `mkdir abcd` &rarr; is used to create an empty directory inside the `pwd` named *abcd*
+- `rmdir abcd` &rarr; is used to remove a directory in `pwd` named *abcd*. But this removes only an empty directory
+- `cp hello.c sahil.c` &rarr; is used to make a copy of a file. in this case a copy of **hello.c** is made and is named **sahil.c**
+- `mv hello.c ../../sahil` &rarr; is used to **rename** or **move** a file. in this case hello.c is moved to a directory named sahil in the grandparent directory.
+- `rm abcd` &rarr; is used to remove a file in the pwd named *abcd*. But there pops a comfirmation message.
+  - `rm -f abcd` &rarr; here `-f` means forcefully. it just deletes the file named *abcd*
+  - `rm -r abcd` &rarr; is used to delete a directory named abcd. here the `-r` flag means recursively remove. but this also asks for confirmation message 
+  - `rm -rf abcd` &rarr; means remove the directory named abcd recursively and forcefully.
+
+- if `..` refers to parent and `../..` refers to the grand parent, then `.` refers to the present directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -170,7 +170,7 @@ int main(void)
 }
 ```
 - this also prints hello, world inspite of the changes made. this is because in order to make those changes reflect, we have to recompile the file. 
-- `make ` itself is not a compiler, it knows how to find the compiler and use it on the system and give the compiled file.
+- `make` itself is not a compiler, it knows how to find the compiler and use it on the system and give the compiled file.
 
 ### Functions in C
 - functions are actions or verbs like say or print which are used to do certain specific tasks. functions take inputs otherwise called arguments.

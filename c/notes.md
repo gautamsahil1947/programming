@@ -291,6 +291,41 @@ this function has it all.
 - if `..` refers to parent and `../..` refers to the grand parent, then `.` refers to the present directory
 
 
+- `bool`, `char %c`, `int %i`, `long %li`, `float %f`, `double %f`, `string %s` are some of the data types in c and their format codes
+- `get_char`, `get_int`, `get_long`, `get_float`, `get_double`, `get_string` are some of the functions from CS50 library corresponding to taking input of the data types.
+
+- `+`, `-`, `*`, `/`, `%` are some of the operators in c.
+
+```c
+...
+// to count 
+int counter = 0; // initiation point
+...
+... 
+counter = counter + 1; // increment
+...
+```
+- this can also be represented in short hand notation called `syntactic sugar`
+- once the data type of the variable is declared, you don't need to mention it again and again.
+```c
+int counter = 0;
+...
+...
+counter = counter + 1;
+counter += 1;
+counter++;
+
+// or 
+counter = counter - 1;
+counter -= 1;
+counter--;
+// represent the same thing adding 1 and subtracting one
+```
+- the `=` used here is assignment operator, so first the expression on the right hand side is calculated and then the answer is assigned to the variable on the left hand side.
+
+
+
+
 
 
 

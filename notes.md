@@ -488,7 +488,7 @@
     -   **style**, or how well-formatted our code is visually
 -   Our first program in C that simply prints “hello, world” to the screen looks like this:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -559,7 +559,7 @@
     -   And just like learning a new human language, it might take weeks or months before we start automatically noticing these small details, like the semicolon. For some programming languages, the convention is to use all lowercase letters for variable and function names, but for others the conventional style might be different.
 -   We’ll experiment again with our original program, this time removing the `\n` from the string we pass into `printf`:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -578,7 +578,7 @@
     
 -   Let’s try adding a new line within our string:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -613,7 +613,7 @@
 -   When we use `\n` to create a new line, we’re using an **escape sequence**, or a way to indicate a different expression within our string. [In C](https://en.wikipedia.org/wiki/Escape_sequences_in_C), escape sequences start with a backslash, `\`.
 -   Now, let’s try writing a program to get a string from the user:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -642,7 +642,7 @@
 -   We’ll need to also include `cs50.h`, a library written by CS50’s staff, with helpful functions and definitions like `string` and `get_string`.
 -   We’ll update our code to load the library …
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -665,7 +665,7 @@
     
 -   It turns out, we need to use a bit more syntax:
     
-    ```
+    ```c
     printf("hello, %s\n", answer);
     ```
     
@@ -677,7 +677,7 @@
     -   The four dots on lines 6 and 7 also help us see the number of spaces for indentation, helping us line up our code.
 -   We could also use the return value from `get_string` directly as an argument, as we might have done in Scratch with nested blocks:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -809,7 +809,7 @@
 
 -   Let’s create a new file in our instance of VS Code with the command `code calculator.c` in our terminal. Then, we’ll add in the following code to the editor that’s opened for us, and save the file:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -835,7 +835,7 @@
     
 -   We can change our program to use a third variable, `z`:
     
-    ```
+    ```c
     int z = x + y;
     printf("%i\n", z);
     ```
@@ -843,7 +843,7 @@
     -   This version gives us a reusable variable, but we might not intend on using the sum again in our program, so it might not necessarily be better.
 -   We can improve the style of our program with **comments**, notes to ourselves that the compiler ignores. Comments start with two slashes, `//`:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -879,7 +879,7 @@
     -   It turns out that data types each use a fixed number of bits to store their values. An `int` in our virtual environment uses 32 bits, which can only contain about four billion (2<sup>32</sup>) different values. But since integers can be positive or negative, the highest positive value for an `int` can only be about two billion, with a lowest negative value of about negative two billion.
 -   We can change our program to store and display the result as a `long`, with more bits:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -902,11 +902,11 @@
 
 -   In Scratch, we had conditional, or “if”, blocks, like:
     
-    ifx<ythensayx is less than y
+    if x < y then say x is less than y
     
 -   In C, we similarly have:
     
-    ```
+    ```c
     if (x < y)
     {
         printf("x is less than y");
@@ -917,9 +917,9 @@
     -   And even though `if` is followed by parentheses, it is not a function. We also don’t use semicolons after the conditionals.
 -   We can have “if” and “else” conditions:
     
-    ifx<ythensayx is less than yelsesayx is not less than y
+    if x < y then say x is less than y else say x is not less than y
     
-    ```
+    ```c
     if (x < y)
     {
         printf("x is less than y\n");
@@ -934,7 +934,7 @@
     
     ifx<ythensayx is less than yelseifx\>ythensayx is greater than yelseifx\=ythensayx is equal to y
     
-    ```
+    ```c
     if (x < y)
     {
         printf("x is less than y\n");
@@ -952,7 +952,7 @@
     -   Notice that, to compare two values in C, we use two equals signs, `==`.
     -   And, logically, we don’t need the `if (x == y)` in the final condition, since that’s the only case remaining. Instead of asking three different questions, we can just ask two, and if both of the first cases are false, we can just say `else`:
         
-        ```
+        ```c
         if (x < y)
         {
             printf("x is less than y\n");
@@ -969,7 +969,7 @@
         
 -   Let’s write another program. We’ll start by running `code points.c` in our terminal window, and in the text editor, add:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1009,7 +1009,7 @@
     
 -   But in our program, we’ve included the same **magic number**, or value that comes from somewhere unknown, in two places. Instead of comparing the number of points against `2` in both cases manually, we can create a **constant**, a variable that we aren’t able to change:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1037,7 +1037,7 @@
     -   By convention, too,
 -   We’ll write another program called [`parity.c`](https://cdn.cs50.net/2021/fall/lectures/1/src1/parity.c?highlight):
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1074,7 +1074,7 @@
     
 -   We’ll look at another program, [`agree.c`](https://cdn.cs50.net/2021/fall/lectures/1/src1/agree.c?highlight):
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1102,7 +1102,7 @@
 
 -   We’ll write a program to print “meow” three times, as we did in Scratch:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -1118,7 +1118,7 @@
     
     foreversaymeow
     
-    ```
+    ```c
     while (true)
     {
         printf("meow\n");
@@ -1130,7 +1130,7 @@
     
     repeat3saymeow
     
-    ```
+    ```c
     int counter = 0;
     while (counter < 3)
     {
@@ -1144,7 +1144,7 @@
     -   Each time our loop repeats, we’ll print “meow” to the screen, and then increase the value of `counter` by one.
 -   We can simplify our loop slightly:
     
-    ```
+    ```c
     int i = 0;
     while (i < 3)
     {
@@ -1157,7 +1157,7 @@
     -   We start `i` at `0` by convention as well, so by the time `i` reaches `3`, our loop will have repeated 3 times.
 -   It turns out that this is a common pattern, so in C we can use a for loop:
     
-    ```
+    ```c
     for (int i = 0; i < 3; i++)
     {
         printf("meow\n");
@@ -1168,7 +1168,7 @@
     -   One minor difference with a for loop, compared to a while loop, is that the variable created within a for loop will only be accessible within the loop. In contrast, the variable `i` we created outside the while loop will still be accessible after the while loop finishes.
 -   We’ll use a loop to “meow” three times in our program:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -1193,7 +1193,7 @@
         
 -   Now we can start creating our own functions, like custom blocks in Scratch:
     
-    ```
+    ```c
     #include <stdio.h>
     
     void meow(void)
@@ -1214,7 +1214,7 @@
     -   The lines of code in the curly braces that follow will be the code that runs every time our function is called.
 -   We can move our function to the bottom of our file, since we don’t need to know how it’s implemented right away:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -1251,7 +1251,7 @@
     -   We’ll start with the first one, and it turns out that our “implicit declaration”, or use of the function without defining it first, is not allowed.
 -   The compiler reads our code from top to bottom, so it doesn’t know what the `meow` function is. We can solve this by **declaring** our function with a **prototype**, which just tells the compiler that we’ll define our function later with the return type and argument type specified:
     
-    ```
+    ```c
     #include <stdio.h>
     
     void meow(void);
@@ -1273,7 +1273,7 @@
     -   `void meow(void);` is our function’s prototype. Notice that we don’t actually write the implementation of the function until later in our code.
 -   We can add an argument to our `meow` function:
     
-    ```
+    ```c
     #include <stdio.h>
     
     void meow(int n);
@@ -1302,7 +1302,7 @@
 
 -   Let’s try to print out some blocks to the screen, like those from the video game [Super Mario Bros](https://en.wikipedia.org/wiki/Super_Mario_Bros.). We’ll start with printing four question marks, simulating blocks:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -1313,7 +1313,7 @@
     
 -   With a for loop, we can print any number of question marks with better design:
     
-    ```
+    ```c
     #include <stdio.h>
     
     int main(void)
@@ -1337,7 +1337,7 @@
         
 -   Let’s get a positive integer from the user, and print out that number of question marks, by using a **do while** loop:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1375,7 +1375,7 @@
         
 -   And we can print a two-dimensional set of blocks with nested loops, or loops one inside the other:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1418,7 +1418,7 @@
         
 -   We can stop a loop early as well. Instead of the do while loop from earlier, we can use a while loop:
     
-    ```
+    ```c
     while (true)
     {
         n = get_int("Size: ");
@@ -1435,7 +1435,7 @@
 
 -   Let’s take a look at calculating values again, this time with floats and division:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1505,7 +1505,7 @@
 -   Fortunately, we have more hardware these days, so we can start allocating more and more bits to store higher and higher values.
 -   We’ll see one last example:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <stdio.h>
     
@@ -1535,7 +1535,7 @@
 -   It turns out that there’s imprecision in storing the `float` we get from the user (`4.20` might be stored as `4.199999...`), and so when we multiply it and display it as an integer, we see `419`.
 -   We can try to solve this by rounding:
     
-    ```
+    ```c
     #include <cs50.h>
     #include <math.h>
     #include <stdio.h>
@@ -1551,6 +1551,169 @@
     -   `math.h` is another library that allows us to `round` numbers.
 -   Unfortunately, these bugs and mistakes happen all the time. For example, in the past some airplane’s software needed to be restarted every 248 days, since one of its counters for time was overflowing as well.
 -   See you next time!
+
+- `unsigned int`
+  - `unsigned` is a qualifier that can be applied to certain
+types (including int), which effectively doubles the
+positive range of variables of that type, at the cost of
+disallowing any negative values.
+
+- `void`
+  -  Is a type, but not a data type.
+  -  Functions can have a void return type, which just
+means they don’t return a value.
+  -  The parameter list of a function can also be void. It
+simply means the function takes no parameters.
+  -  For now, think of void more as a placeholder for
+“nothing”. It’s more complex than that, but this should
+suffice for the better part of the course
+- bool and string are defined in cs50 library so if you want to use these, take care.
+```c
+int number;
+char letter;
+// multiple variables can be declared at the same time
+int height, width;
+float sqrt2, sqrt3, pi;
+
+int number; // declaration
+number = 17; // assignment
+char letter; // declaration
+letter = ‘H’; // assignmentnt 
+number = 17; // initialization
+char letter = ‘H’; // initialization
+
+```
+- In C, every nonzero value is equivalent to true, and
+zero is false.
+- `&&`, `||`, `!`, `>`, `<`, `>=`, `<=`, `==`, `=`, `-`, `+`, `*`, `/`, `%` are some of the operators in c including the logical and the relational ones.
+```c
+if (boolean-expression)
+{
+
+}
+
+```
+- If the boolean-expression evaluates to true, all lines
+of code between the curly braces will execute in order from
+top-to-bottom.
+- If the boolean-expression evaluates to false, those
+lines of code will not execute.
+```c
+if (boolean-expression)
+{
+
+}
+else
+{
+
+}
+
+```
+- If the boolean-expression evaluates to true, all lines
+of code between the first set of curly braces will execute in
+order from top-to-bottom.
+- If the boolean-expression evaluates to false, all lines
+of code between the second set of curly braces will execute
+in order from top-to-bottom.
+
+```c
+if (boolean-expr1)
+{
+// first branch
+}
+else if (boolean-expr2)
+{
+// second branch
+}
+else if (boolean-expr3)
+{
+// third branch
+}
+else
+{
+// fourth branch
+}
+```
+- only one of these is executed based on the boolean expressions. code of the first true expression will be executed. if all the boolean expressions are false then the else block will be executed (if any).
+
+```c
+if (boolean-expr1)
+{
+// first branch
+}
+if (boolean-expr2)
+{
+// second branch
+}
+if (boolean-expr3)
+{
+// third branch
+}
+else
+{
+// fourth branch
+}
+```
+- the else in the multiple if ladder sticks to the closest if.
+```c
+int x = GetInt();
+switch(x)
+{
+case 1:
+printf(“One!\n”);
+break;
+case 2:
+printf(“Two!\n”);
+break;
+case 3:
+printf(“Three!\n”);
+break;
+default:
+printf(“Sorry!\n”);
+}
+```
+```c
+int x = GetInt();
+switch(x)
+{
+case 5:
+printf(“Five, ”);
+case 4:
+printf(“Four, ”);
+case 3:
+printf(“Three, ”);
+case 2:
+printf(“Two, ”);
+case 1:
+printf(“One, ”);
+default:
+printf(“Blastoff!\n”);
+}
+```
+- another conditional called switch exists in c and you may learn more about it if needed.
+```c
+int x;
+if (expr)
+{
+    x = 5;
+}
+else
+{
+    x = 6;
+}
+// this can alternatively be written as
+
+int x = (expr) ? 5 : 6;
+```
+```c
+for (int i = 0; i < n; i = i + 2)
+{
+    // this is also correct
+}
+```
+- the increment inside the for loop need not be `i++` or `i--` all the time and can be anything according to the need
+
+---
 
 -   [Compiling](https://cs50.harvard.edu/x/2022/notes/2/#compiling)
 -   [Debugging](https://cs50.harvard.edu/x/2022/notes/2/#debugging)

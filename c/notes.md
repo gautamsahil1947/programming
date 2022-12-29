@@ -323,27 +323,640 @@ counter--;
 ```
 - the `=` used here is assignment operator, so first the expression on the right hand side is calculated and then the answer is assigned to the variable on the left hand side.
 
+> let's make a calculator which asks the user for inputs and prints the sum .
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int x = get_int("x: ");
+    int y = get_int("y: ");
+    // printf(x + y); this is not the way it works (why?)
+    printf("%i\n", x + y);
+}
+```
+- the first argument in printf has to be a string in double quotes.
+```c
+int z = x + y;
+printf("%i\n", z);
+```
+- if the sum is to be used and reused again and again, then it is better to use z as a container for sum.
+- pressing  `tab` on the command line completes what you were typing
+- using &uarr; and &darr; you can nevigate through all the commands that were executed on the terminal.
+```
+$ make calculator 
+$ ./calculator
+x: 1000000000
+y: 1000000000
+2000000000
+$ ./calculator
+x: 2000000000
+y: 2000000000
+-294967296
+$ 
+```
+- this is because the integer ran out of bits. an `int` uses `32 bits` or `4 bytes`. with 8 bytes, you can count as high as 256. with 32 bits, you can count about 4 billion. but since integer also consists of negative integers, so the  max we can count with an integer is roughly 2 billion in both the directions.
+- the temperary solution for this problem is to use `long int` instead of `int`. but this does not slove the problem and just pushes the can further down the street...
+### Conditionals
+```c
+...
+if (condition)
+{
+    // the code inside
+}
+...
+```
+-  if is not a function. it is a feature of the C language. if the condition inside is true, then the block of if is executed, else the if block is skipped and the code after it is executed
+```c
+if (condition)
+{
+    // code 1
+}
+else
+{
+    // code 2
+}
+```
+- in case of if-else ladder, if the condition is true, then the if block is executed and the else is ignored. but if the condition is false, then the else block is executed and the if block is ignored.
+```c
+if (condition 1)
+{
+    // code 1
+}
+else if (condition 2)
+{
+    // code 2
+}
+else
+{
+    // code 3
+}
+```
+- if the if condition is correct, then all else-if and else are ignored. 
+- in case of if-else-if-else ladder,  block with the first correct condition is executed and rest are ignored. if no condition was correct, then the else block is executed (if any).
+- onle one block will be executed in a if-elseif-else ladder or if-else ladder
+- you can use multiple ifs if all the conditions are independent of each other.
+- we do not use the semicolon after the conditionals
+
+> lets write a simple programm taht prompts user for marks lost and then compares those marks to your marks. (points.c)
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int points = get_int("how many points did you loose? ");
+    
+    if (points < 2)
+    {
+        printf("you lost fewer points than me\n");
+    }
+    else if (points > 2)
+    {
+        printf("you lost more points than me\n");
+    }
+    else if (points == 2)
+    {
+        printf("you lost same points as me\n");
+    }
+
+}
+```
+- the last line is not required as we do not need to ask three questions when the third one is obvious
+```c
+...
+...
+// no need to use else if again 
+else 
+{
+    printf("you lost same points as me\n");
+}
+```
+- there is still a bit redundency in the code. the number **2** also refered as the `magic number`, repeats two times and is manually hard coded. if in future it has to be changed, then it will be tedious and also induces probability of screwing up at some point of time.
+- so we can declare a variable for my marks
+```c
+int mine = 2;
+```
+- and since we don't want to change this constant accidently, we should declare the variable a `constant` using the `const` keyword.
+- the constant variables are written in capitals, not by convention, but for the sake of awareness, that it is a constant
+```c
+const int MINE = 2;
+```
+> write a code to take a number from the user and print whether it is even or odd (parity.c)
+```c
+#include <stdio.h>
+#include <cs50.h>
+ 
+int main(void)
+{
+    int n = get_int("n: ");
+    
+    // if n is even
+    if (n % 2 == 0)
+    {
+        printf("even\n");
+    } 
+    else
+    {
+        printf("odd\n");
+    }
+
+}
+```
+- here the `==` is the equality operator and is used to compare two values
+- `%` is called the remainder operator and is used to find the remainder 
+ ```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    char c = get_char("agreed or not agreed? ");
+
+    if (c == 'y')
+    {
+        printf("agreed\n");
+    }
+    else if (c == 'n')
+    {
+        printf("not agreed\n");
+    }
+}
+ ```
+- this does not accomodate the possibilities of 'Y' and 'N'. 
+
+- **as soon as you find yourself copy pasting, you are probably doing something wrong**
+```c
+// (c == 'y' or c == 'Y')
+if (c == 'y' || c == 'Y')
+{
+    // this is how c accomodates logical or
+}
+```
+- similarly the logical and becomes
+```c
+// (a % 2 == 0 and a < 55)
+if (a % 2 == 0 && a < 55)
+{
+    // this is how c accomodates logical and
+}
+```
+- so the code becomes
+ ```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    char c = get_char("agreed or not agreed? ");
+
+    if (c == 'y' || c == 'Y')
+    {
+        printf("agreed\n");
+    }
+    else if (c == 'n' || c == 'N')
+    {
+        printf("not agreed\n");
+    }
+}
+ ```
+ - `||` stands for logical OR, `&&` stands for logical AND, `==` is an equality operator
+ - all the questions in the conditionals has to be explisit
+ ```c
+ if (c == 'y' || 'Y')
+//  this is not a valid condition
+ ```
+ - chars use `' '` single quotes and strings use double quotes even for single character.
+ - you cannot compare strings directly as you do with chars. to compare strings, there is a function in the `string.c` library `strcmp` which returns 0 if the strings are same.
+ ```c
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+
+int main(void)
+{
+   string c = get_string("agreed or not agreed? ");
+
+   if (strcmp(c, "y") == 0 || strcmp(c, "Y") == 0)
+   {
+       printf("agreed\n");
+   }
+   else if (strcmp(c, "n") == 0 || strcmp(c, "N") == 0)
+   {
+       printf("not agreed\n");
+   }
+}
+ ```
+ - if there is `0` inside the if conditional, it is considered `false`. similarly if `anything except 0` is inside the conditional, it is considered `true` by default.
+ - alternate way to do this 
+ ```c
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+
+int main(void)
+{
+   string c = get_string("agreed or not agreed? ");
+
+   if (!strcmp(c, "y") || !strcmp(c, "Y"))
+   {
+       printf("agreed\n");
+   }
+   else if (!strcmp(c, "n") || !strcmp(c, "N"))
+   {
+       printf("not agreed\n");
+   }
+}
+ ```
+ - `!` is the not operator and inverts the sense of a statement.
+   - `!true` &rarr; false
+   - `!false` &rarr; true
+   - `!0` &rarr; 1 (true)
+   - `!1` &rarr; 0 (false)
+
+> write a code to print meow three times (meow.c)
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("meow\n");
+    printf("meow\n");
+    printf("meow\n");
+}
+```
+- this thing works, but there should be a better way to do it instead of copying and pasting.
+### Loops in C
+ - forever loop in C
+ ```c
+while (true)
+{
+    // while block
+}
+ ```
+- while loop takes boolean expression in the (parantheses) and any condition which is true will work here, like `2 < 3` and so on. therefore using `true` makes it clear in the long run. `false` here means false. you can also use 0 for false and 1 for true.
+
+- if you want to implement a loop for certain number of times, this is how you do it
+```c
+int n = get_int("how many times? ");
+
+int counter = 0;
+while (counter < n)
+{
+    printf("meow\n");
+    counter++;
+}
+```
+- the code above is to implement the physicallity of counting upwards in code
+> dry running the code above for better understanding
+> - n = 3 input from the user
+> - counter = 0
+> - check the while condition 0 < 3
+>   - print meow 
+>   - increase counter by 1 &rarr; counter = 1
+> - check the while condition 1 < 3 
+>   - print meow 
+>   - increase counter by 1 &rarr; counter = 2
+> - check the while condition 2 < 3
+>   - print meow 
+>   - increase counter by 1 &rarr; counter = 3
+> - check the while condition 3 < 3
+>   - the condition is false
+>   - skip the while block and move further in the code (if any)
+- if you want to count `n` times, you can either count from `0 to n - 1` or `1 to n`
+- the code above can be tightened up as follows
+```c
+int n = get_int("how many times? ");
+
+int i = 0; // initialising counter variable to baseline 0
+while (i < n)
+{
+    printf("meow\n");
+    i++; // increment logic
+}
+```
+- or this also does the same thing just the counting differs.
+```c
+int n = get_int("how many times? ");
+
+int i = 1; // initialising counter variable to baseline 0
+while (i <= n)
+{
+    printf("meow\n");
+    i++; // increment logic
+}
+```
+- same thing can be done with for loop in c
+```c
+int n = get_int("how many times? ");
+for (int i = 0; i < n; i++)
+{
+    // the block of for loop
+}
+```
+> in for loop, 
+> - the first segment initialises the counter variable
+> - the second segment is the condition 
+> - the third one is the increment or decrement
+
+> how does a for loop work?
+> - first it initiates the variable> - for loops are used where we have to count finite number of times 
+> - then it checks the condition. 
+>   - if the condition is true, the code is executed, else the for block is skipped
+> - then the last segment is executed that is the increment or decrement
+> - again the condition is checked. this goes on till the condition turns false.
+
+> what is the difference between for loop and  while loop?
+> - for loop and while loops can be used to do the same things. the only difference comes in the scope of the variables declared.
+> - in case of the while loop, the variable is declared outside the while block, so can be accessed anywhere in the code, whereas the variable of the for loop is available inside the loop only.
+
+- the increment logic inside the for loop need not be the `i++` or `i--`, it can be any valid logic for change in variable.
+```c
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+
+int main(void)
+{
+    for (int i = 1; i < 555; i = i*2)
+    {
+        printf("%i\n", i);
+    }
+}
+// for (variable initiation; condition; loop progression condition)
+```
+- you can initiate more than one variables of same data type inside the for loop variable initiation
+```c
+for (int i = 0, j = 6; i < j; i++)
+{
+    // code to be executed
+}
+```
+- let's use loops to improve the design of the code we wrote (meow.c)
+```c
+#include <stdio.h>
+
+int main(void)
+{
+   for (int i = 0; i < 3; i++)
+   {
+        printf("meow\n");
+   }
+}
+```
+```
+$ make meow 
+$ ./meow 
+meow
+meow
+meow
+$ 
+```
+### Abstraction
+- now we have a piece of code which does meowing. let's make our own custom function meow
+```c
+output name(input)
+{
+    // code of the function
+}
+```
+- the function should be defined outside the main function on the top as the compiler reads the code top to bottom.
+- void is used to say no explicitly
+
+
+```c
+#include <stdio.h>
+// defining a function meow
+void meow(void)
+{
+    printf("meow\n");
+}
+
+int main(void)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        // calling the function meow
+        meow();
+    }
+}
+```
+- so now the function meow exists, if we move it way down in the code, the compiler throws an error, as it reads the code top to bottom and the function is called before defining it.
+- to solve this, a prototype  of the function is placed above main to let the compiler know that a funciton exists
+```c
+#include <stdio.h>
+// prototype of our function
+void meow(void);
+
+int main(void)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        // calling the function meow
+        meow();
+    }
+}
 
 
 
+// defining a function meow
+void meow(void)
+{
+    printf("meow\n");
+}
+```
+- it can be improved further
+```c
+#include <stdio.h>
+// prototype of our function
+void meow(int j);
+
+int main(void)
+{
+    // calling the function meow
+    meow(3);
+}
 
 
 
+// defining a function meow
+void meow(int j)
+{
+    
+    for (int i = 0, n = j; i < n; i++)
+    {
+        printf("meow\n"); 
+    }
+}
+```
+- when making modifications to the functions, do not forget to change the prototype 
+- similar to our prototypes, the header files like `stdio.h` and `cs50.h` have a menu of header files so as to prepare the compiler on how these functions are implemented or what functions to expect
+
+>let's code a programm to discount some prices (discount.c)
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    float regular = get_float("regular? ");
+    float sale = regular * .85;
+    printf("sale price : %.2f\n", sale);
+}
+```
+- this can be improved further by declaring a function that does all the discount
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+float discount(float p);
+
+int main(void)
+{
+    float regular = get_float("regular? ");
+    float sale = discount(regular);
+    printf("sale price : %.2f\n", sale);
+}
 
 
+float discount(float p)
+{
+    // p = p * .85;
+    // return p;
+    // // or
+    return p * .85;
+}
+```
+- return in the function discount is returning or handing back the value to be stored and reused.
+- functions in c can take multiple arguments.
+> write a programm improving discount.c, taking price and % discount and printing the sale price
+```c
+#include <stdio.h>
+#include <cs50.h>
 
+float discount(float cost, float off);
 
+int main(void)
+{
+    float price = get_float("price: ");
+    float percentage_off = get_float("percentage off: ");
+    float sale = discount(price, percentage_off);
+    printf("sale price %.2f\n", sale);
+}
 
+float discount(float cost, float off)
+{
+    return cost * (100 - off)/100;
+}
+```
+### scope of a variable
+- a variable defined inside main function is limited to the main function.
+- variables like cost and off are scoped inside the function discount only and are not accessible outside
+- changing `cost` does not affect the `price` variable as cost is a copy of price and changing a copy does not change the orignal one.
+### ascii art
+```c
+#include <stdio.h>
 
+int main(void)
+{
+    printf("####\n");
+}
+```
+```c
+#include <stdio.h>
 
+int main(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        // print four brics in a line
+        printf("#");
+    }
+    // after printing, move to the next line
+    printf("\n");
+}
+```
+- both the codes give the same result
+```
+$ make test 
+$ ./test
+####
+$ 
 
+```
+### Do - While loop in C
+```c
+int n;
+do
+{
+    // the block to be executed
+}
+while (condition);
+```
+- a `do - while` loop is used when you want to run a code atleast once and then check the condition. 
+- it is synonymous to _"do the following, while true"_. therefore the do while loop breaks as soon as the condition is false.
 
+> write a code to print the following structure of the width given by the user.
+```
+size: 3
+###
+###
+###
+```
 
+```c
+#include <stdio.h>
+#include <cs50.h>
 
+int main(void)
+{
+    int i;
+    do
+    {
+        i = get_int("size: ");
+    }
+    while ( i < 1);
+    // for each row
+    for (int j = 0; j < i; j++)
+    {
+        // for each column
+        for (int k = 0; k < i; k++)
+        {
+            // print a brick
+            printf("#");
+        }
+        // move to the next line
+        printf("\n");
+    }
+}
+```
+```
+$ make test 
+$ ./test
+size: -8
+size: -7
+size: 
+size: 0
+size: 
+size: 2
+##
+##
+$ 
+```
 
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+. left for future
 
 
 
